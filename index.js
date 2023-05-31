@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
       for (const iface of interfaces) {
         // Skip over non-IPv4 and internal (e.g., loopback) addresses
         if (iface.family === "IPv4" && !iface.internal) {
-          return iface.address;
+          return iface.mac;
         }
       }
     }
